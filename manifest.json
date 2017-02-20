@@ -1,0 +1,43 @@
+{
+  "manifest_version": 2,
+
+  "name": "Demo Chrome Extension",
+  "description": "This is a demo",
+  "version": "1.0",
+
+  "browser_action": {
+   "default_icon": "images/icon.png",
+   "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches":["http://www.mlsli.com/homes-for-sale/*"],
+      "js": ["jquery-3.1.1.min.js", "content.js"],
+      "run_at": "document_end"  
+    },
+    {
+      "matches":["http://www.mlsli.com/listing/listingsearch.aspx/*"],
+      "js": ["jquery-3.1.1.min.js", "listing.js"],
+      "run_at": "document_end"  
+    },
+    {
+      "matches":["https://www.rdesk.com/communityinfo/CommunityReports.aspx?*"],
+      "js": ["jquery-3.1.1.min.js", "iframe1.js"],
+      "run_at": "document_end"  
+    },
+    {
+      "matches":["https://www.walkscore.com/*"],
+      "js": ["jquery-3.1.1.min.js", "walkscore.js"],
+      "run_at": "document_end"  
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "notifications",
+    "storage"
+   ],
+  "background":{
+    "scripts" : ["background.js"]
+  }
+}
