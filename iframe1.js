@@ -21,8 +21,10 @@ chrome.storage.local.get("current",function(currentObj){
           getTableInfo(current,'#rpt_prptHomes_ctl00_r_dom',function(obj){
             current =obj;
             console.log(current);
-            var tabClick = document.querySelector("#ctl01_tsTabControl_1");
-            simulateClick(tabClick);
+            chrome.storage.local.set({"current":current},function(){
+              var tabClick = document.querySelector("#ctl01_tsTabControl_1");
+              simulateClick(tabClick);
+            });
           });
         });
       }else if(tab2 && tab2.length > 0 ){
@@ -32,8 +34,10 @@ chrome.storage.local.get("current",function(currentObj){
           getTableInfo(current,'#rpt_prptEducation_ctl00_r_dom',function(obj){
             current =obj;
             console.log(current);
-            var tabClick = document.querySelector("#ctl01_tsTabControl_2");
-            simulateClick(tabClick);
+            chrome.storage.local.set({"current":current},function(){
+              var tabClick = document.querySelector("#ctl01_tsTabControl_2");
+              simulateClick(tabClick);
+            });
           });
         });
       }else if(tab3 && tab3.length > 0 ){
@@ -41,8 +45,10 @@ chrome.storage.local.get("current",function(currentObj){
         getTableInfo(current,'#rpt_prptEconomy_ctl00_r_dom',function(obj){
           current =obj;
           console.log(current);
-          var tabClick = document.querySelector("#ctl01_tsTabControl_3");
-          simulateClick(tabClick);
+          chrome.storage.local.set({"current":current},function(){
+            var tabClick = document.querySelector("#ctl01_tsTabControl_3");
+            simulateClick(tabClick);
+          });
         });
       }else if(tab4 && tab4.length > 0 ){
         clearInterval(initial);
@@ -60,8 +66,10 @@ chrome.storage.local.get("current",function(currentObj){
                     current =obj;
                     getTableInfo(current,'#rpt_prptcolleges_r_dom',function(obj){
                       console.log(current);
-                      var tabClick = document.querySelector("#ctl01_tsTabControl_4");
-                      simulateClick(tabClick);
+                      chrome.storage.local.set({"current":current},function(){
+                        var tabClick = document.querySelector("#ctl01_tsTabControl_4");
+                        simulateClick(tabClick);
+                      });
                     });
                   });
                 });
@@ -76,8 +84,10 @@ chrome.storage.local.get("current",function(currentObj){
           getTableInfo(current,'#rpt_prptEnvironment_ctl00_r_dom',function(obj){
             current =obj;
             console.log(current);
-            var tabClick = document.querySelector("#ctl01_tsTabControl_5");
-            simulateClick(tabClick);
+            chrome.storage.local.set({"current":current},function(){
+              var tabClick = document.querySelector("#ctl01_tsTabControl_5");
+              simulateClick(tabClick);
+            });
           });
         });
       }else if(tab6 && tab6.length > 0 ){

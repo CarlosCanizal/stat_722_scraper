@@ -5,6 +5,7 @@ var name = $('.listing-number').html();
 current.Status = $("span.ld-status span span").text();
 current.ListingNumber = name;
 current.State = $("span.city-state-zip[itemprop='addressRegion']").html();
+current.PostalCode = $("span.city-state-zip[itemprop='postalCode']").html();
 current.Sold_Price = $(".price-container .price").html();
 current.Date_Sold = $(".price-container > span").find('i span').html();
 current.StreetAddress= $(".full-address").text();
